@@ -20,8 +20,8 @@ class ClientType extends AbstractType
         $builder->add('nom',TextType::class)
         ->add('prenom',TextType::class)
         ->add('email',EmailType::class)
-        ->add('adresse',TextType::class)
-        ->add('telephone',TextType::class)
+        ->add('adresse',TextType::class,array('required'=>false))
+        ->add('telephone',TextType::class,array('required'=>false))
         ->add('Modifier',SubmitType::class);
         
     }

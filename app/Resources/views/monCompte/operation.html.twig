@@ -6,8 +6,8 @@
 <div class="table-responsive">
 	{% if client.reservations | length == 0 %}
 	Aucune reservation  en cours.
-	{% endif %}
-	<table class="table">
+	{% else %}
+		<table class="table">
 		<tr ><th></th><th>Designation</th><th>Prix</th><th>Vendeur</th><th>Quantite</th><th>Date</th><th>Etat</th><th>Prix total</th><th></th></tr>  
 		{% for item in client.reservations %}
 			<tr class="tableLigneArticle">
@@ -32,4 +32,6 @@
 		<!--<td></td><td></td><td></td><td></td><td></td><td><h3>Total :</h3></td><td><h3 id="total"></h3></td>-->	
 
 	</table>
+	{% endif %}
+	
 </div>
