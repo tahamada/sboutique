@@ -1,0 +1,19 @@
+<div id="alertZone">
+{% if message[0] is defined %}
+    {% if message[0]==0 %}
+       <div class="alert alert-danger alert-dismissable">
+          <strong>{{message[1]}}</strong>
+        </div>
+    {% endif %}
+    {% if message[0]==1 %}
+       <div class="alert alert-success alert-dismissable">
+          <strong>{{message[1]}}</strong>
+        </div>
+    {% endif %}
+    {% if message[0]==2 %}
+       <div class="alert alert-warning alert-dismissable">
+          <strong>{{message[1]}}</strong>
+        </div>
+    {% endif %}
+{% endif %}
+</div>

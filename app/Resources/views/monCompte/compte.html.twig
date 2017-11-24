@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<h2>Mon Compte</h2>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#detail">Detail</a></li>
+  <li><a data-toggle="tab" href="#op">Opération</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="detail" class="tab-pane fade in active">
+    {% include 'monCompte/clientForm.html.twig' %} 
+  </div>
+  <div id="op" class="tab-pane fade">
+    {% include 'monCompte/operation.html.twig' %}
+  </div>
+</div>
+
+{% endblock %}

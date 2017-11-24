@@ -1,0 +1,21 @@
+<div id="connAlertZone">
+</div>
+<div class="borderedBottom">
+    <h4 class="text-center"><em>Veuillez vous connecter</em></h4>
+</div>
+<form id="connexionForm" action="" method="POST">
+    <label for="email">Email:</label><input type="text" class="form-control" id="email" name="email" required/>
+    <label for="password">Password:</label><input type="password" class="form-control" id="password" name="password" required/>     
+</form>
+{# {{ render(url('fos_user_security_login')) }} #}
+
+{# {{ render(controller('FOSUserBundle:Security:login',{ 'max': 1 })) }} #}
+
+{# {{ include('FOSUserBundle:Security:login.html.twig') }} #}
+
+<a class="janrainEngage" href="#"><button><small>Connexion par</small> <img width="50px" src="images/google.png"></button></a>
+<div id="nouveauCompte">
+	<a href="inscription">
+	  <small><span>Pas encore de compte ?</span> <strong><span>Créer mon compte</span></strong></small>
+	</a>
+<div>

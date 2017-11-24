@@ -1,0 +1,446 @@
+body{
+	background-color:#00003c;
+	color:#150109;
+}
+
+#page{
+	background-color:white;
+}
+
+.ban{
+	background-image:url("../images/Digital_Marketing_Agency.jpg");
+	background-size:cover;
+	width: 100%;
+	height: 80px;
+}
+
+/*.vertical-align {
+  display: flex;
+  flex-direction: row;
+}
+*/
+.vertical-align > [class^="col-"],
+.vertical-align > [class*=" col-"] {
+  display: flex;
+  align-items: center;     /* Align the flex-items vertically */
+  justify-content: center; /* Optional, to align inner flex-items
+                              horizontally within the column  */
+}
+
+.navbar{
+	background-color:#9c1b54;
+	border-color:#f5f5f5;
+	margin-bottom: 0px;
+	border:0px;
+	border-radius: 0px;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+	color:#fff;
+	background-color:#000f5d;
+}
+
+.navbar-default .navbar-brand{
+	color:#fff;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+	background-color:#7b1341;
+	color:#fff;
+}
+
+.navbar-default .navbar-nav>li>a{
+	color:#fff;
+}
+
+.navbar-default .navbar-nav>li>a:hover{
+	color:#fff;
+	background-color:#7b1341;
+}
+
+
+.navbar-nav>li>.dropdown-menu{
+	background-color:#9c1b54;
+}
+
+.dropdown-menu>li>a{
+	color:#fff;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+	color:#fff;
+	background-color:#7b1341;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+	background-color:#7b1341;
+	color:#fff
+}
+
+#listCategorie .row, #ajoutCategorie .row{
+	height: 45px;
+}
+
+.btn, button {
+	background-color:#9c1b54;
+	color:white;
+	border-color: #e0d3d9;
+}
+
+.btn:hover, .btn:focus, .btn:active, button:hover, button:focus, button:active{
+	background-color:#7b1341;
+	color:white;
+	border-color: #e0d3d9;
+}
+
+#connexion{
+    margin-bottom: auto;
+}
+
+div.ui-dialog-titlebar{
+    background-color:#9c1b54;
+}
+
+.borderedBottom{
+    border-bottom:1px solid #ccc;
+    background-color:#9c1b54;
+	color:white; 	
+}
+
+.borderedBottom h4{
+	padding-top: 4px;
+	margin-top: 0px;
+}
+
+
+.slick-slide img {
+   //height:300px;
+   width:250px;
+   position:absolute;
+   bottom: 0;
+}
+
+.slick-slide {
+   height:300px;
+}
+
+#mainSlider{
+	padding: 0px;
+}
+
+#sliderContainer{
+	padding:0px;
+}
+
+#listSlide img{
+	//width:100%;
+}
+
+.articleWell{
+    border: 1px solid #9c1b54;
+    margin-bottom: 5px;
+    padding: 0px;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #fbf8f9;    
+}
+
+#articlesList{
+    //background-color: #fff4f9;
+    border-radius: 5px;
+    //border: 1px solid #9c1b54;
+}
+
+.articleWell img{
+	width:100%;
+}
+
+#articlesList a{
+	color:#150109;
+}
+
+.articleWell:hover, .articleWell:focus{
+	background-color: #fff1f5;
+}
+
+.articleWell > div{
+	padding:0px;
+}
+
+.imgNoImg {
+	height:92px;
+}
+
+.prix{
+	font-size: 1.3em;
+}
+
+#submitInscr{
+	margin-top: 10px;
+}
+
+.error{
+	color:red;
+}
+
+input[class='error']{	
+	border:1px solid red;
+}
+
+#connexion a, #menuMonCompte a{
+	color:white;
+	cursor:pointer;
+}
+
+#articleDetail img{
+	width:100%;
+}
+
+#description{
+	width:100%;
+}
+
+#ButtonAjoutPanier{
+	border-radius: 10px;
+	background-color: #E43F0D;
+	color:white;
+	padding: 5px;
+}
+
+#ButtonAjoutPanier:hover, #ButtonAjoutPanier:focus{
+	background-color: #ce380b;
+}
+
+#descriptionArticle{
+	margin-top: 10px;
+	border-top: 1px solid #9c1b54;
+}
+
+.quantite{
+	width:50px;
+	padding-left: 5px;
+	margin-left: 5px;
+	border-radius: 10px;
+	
+}
+
+textarea{
+	width: 100%;
+}
+
+input{
+	width: 100%;
+}
+
+#btnAjoutPanier{
+	background-image:url("../images/pluspanier2.png");
+	background-repeat:no-repeat;
+	background-color: #9c1b54;
+	border-radius: 5px;
+	width:25px;
+	height:27px;
+	top: 6px;
+	padding-right : 32px;
+	padding-bottom : 29px;
+	margin-left: 5px;
+}	
+
+#btnPanier{
+	/*background-image:url("../images/panier2.png");
+	background-repeat:no-repeat;*/
+	border-radius: 5px;
+	height:27px;
+	top: -5px;
+	padding-right : 9px;
+	padding-bottom : 31px;
+	padding-top : 1px;
+	margin-left: 2px;
+	border: 1px solid #e0d3d9;
+}
+
+#btnUser,#btnLogOut,#btnLogIn{
+	top:-1px;
+	border-radius: 5px;
+	padding-right : 9px;
+	padding-top : 8px;
+	padding-bottom : 11px;
+	padding-left: 9px;
+	border: 1px solid #e0d3d9;
+}
+
+
+#btnAjoutPanier:hover, #btnAjoutPanier:focus, #btnAjoutPanier:active,
+#btnPanier:hover, #btnPanier:focus, #btnPanier:active,
+#btnUser:hover, #btnUser:focus, #btnUser:active, 
+#btnLogOut:hover, #btnLogOut:focus, #btnLogOut:active,
+#btnLogIn:hover, #btnLogIn:focus, #btnLogIn:active{
+	background-color:#7b1341;
+	cursor: pointer;
+}
+
+#bs-example-navbar-collapse-1 > form{
+	padding-right: 2px;
+}
+
+#tri{
+	margin-bottom: 5px;
+	top:15px;
+}
+
+#tri button{
+	margin:1px;	
+}
+
+#articlesListHead{
+	margin-bottom: 10px;
+}
+
+#articleListImage{
+	border-bottom: 1px solid #f5e0e9;
+}
+
+.green{
+	color:green;
+}
+
+.red{
+	color:red;
+}
+
+.BtnReserverPanier{
+	margin-left: 3px;
+}
+
+.ui-dialog-titlebar{
+	display: none;
+	color:white;
+}
+
+#panierDialog,#ConnexionDialog{
+	padding-top: 0px;
+	color:#150109;
+}
+
+#nbPanier{
+	color:white;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+	margin-bottom: auto;
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+#nouveauCompte{
+    margin-top: 10px;
+    padding-top: 10px;
+    font-size: smaller;
+    text-align: center;
+    border-top: 1px solid #f5e0e9;
+}
+
+#nouveauCompte:hover{
+	text-decoration:underline;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+	background-color: #9c1b54;
+	color:white;
+}
+
+.nav-tabs>li>a{
+	color:black;
+}
+
+.nav-tabs>li>a:hover{
+	background-color: #e0d3d9;
+}
+
+#submitModifClient{
+	margin-top: 5px;
+}
+
+#connexionAdminForm{
+	padding-bottom: 20px;
+}
+
+#divSubmitConnAdmin{
+	padding:0px;
+	margin-top: 5px;
+}
+
+#footer{
+	text-align: center;
+	margin-top: 20px;
+	height: 50px;
+	background-color:#00003c;
+	color:white; 
+}
+
+#blockArticle{
+	height: 350px ;
+}
+
+#blockArticle img{
+	height: 200px ;
+}
+
+#blockArticle #ListArticleDesignation{
+	height: 100px ;
+}
+
+#footer a{
+	color:white;
+	text-decoration:underline;
+}
+
+.janrainEngage button{
+	margin-top:10px;
+}
+
+#fosBlock input[type="submit"]{
+	margin-top: 5px;
+	border-radius: 5px;
+	background-color: #9c1b54;
+	color:white;
+}
+
+#fosBlock input[type="checkbox"]{
+	width:10px;
+}
+
+#fosBlock input[type="submit"]:hover{
+	background-color:#7b1341;
+}
+
+@media screen and (max-width: 1000px)
+{
+    #mainSlider{
+    	padding-left: 15px;
+    	padding-right: 15px;
+    }
+    .ban{
+    	height: 53px;
+    }
+    #blockArticle{
+    	height: 200px;
+    }
+}
+
+@media screen and (max-width: 550px)
+{
+   
+    .ban{
+    	height: 30px;
+    }
+}
+
+@media (min-width: 1000px)
+{  	
+
+  	.navbar-toggle {
+	    display: none;
+	}
+
+}

@@ -1,0 +1,28 @@
+<div id="alertZonePanier">
+</div>
+<div class="borderedBottom">
+    <h4 class="text-center"><em>Mon Panier</em></h4>
+</div>
+<div class="table-responsive">
+	<table class="table">
+		<tr ><th></th><th>Designation</th><th>Prix</th><th>Vendeur</th><th>Quantite</th><th></th><th></th></tr> 
+		{% for item in panier %}
+			<tr class="tableLigneArticle">
+				<td>
+					<img width="100 px" src="{{asset(item.article.imageurl) }}" />					
+					<span class="hidden panierIdArticle">{{item.article.id}}</span> 
+				</td>
+				<td>{{item.article.designation}}</td>
+				<td><span class="prix">{{item.article.prix}}</span>€</td>
+				<td>{{item.article.nomVendeur}}<span class="hidden panierIdVendeur">{{item.article.idVendeur}}</span></td>
+				<td>  <input type="number" class="quantite" value="{{item.nb}}" min="1" max="99"/></td>
+				<td class="etatStock"></td>
+				<td><button class='btn BtnDelPanier'>Supprimer</button>
+					 {% if session['val'] is defined %}<button class='btn BtnReserverPanier hidden'>Reserver</button>{% endif %}
+					</td>
+			</tr>
+		{% endfor %}
+		<td></td><td></td><td></td><td></td><td></td><td><h3>Total:</h3></td><td><h3 id="total"></h3></td>	
+
+	</table>
+<div>

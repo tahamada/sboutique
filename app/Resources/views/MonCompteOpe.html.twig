@@ -1,0 +1,35 @@
+<h2>Mes commandes</h2>
+{% if Commandes | length == 0 %}
+	Aucune Commande en cours.
+	{% endif %}
+<h2>Mes Reservations</h2>
+<div class="table-responsive">
+	{% if reservations | length == 0 %}
+	Aucune reservation  en cours.
+	{% endif %}
+	<table class="table">
+		<tr ><th></th><th>Designation</th><th>Prix</th><th>Vendeur</th><th>Quantite</th><th>Date</th><th>Etat</th><th>Prix total</th><th></th></tr>  
+		{% for item in reservations %}
+			<tr class="tableLigneArticle">
+				<td>
+					{% if item.imageUrl|replace({".":"Mini."}) is empty%}
+		                <img class="center-block" src="images/article/vide.png"/>
+		            {% else %}
+		                <img class="center-block" src="{{item.imageUrl|replace({".":"Mini."})}}"/>
+		            {% endif %}
+		            <span class="hidden panierIdArticle">{{item.idArticle}}</span> 
+				</td>
+				<td>{{item.designation}}</td>
+				<td><span class="prix">{{item.prix}}</span>€</td>
+				<td>{{item.nomVendeur}}<span class="hidden panierIdVendeur">{{item.idVendeur}}</span></td>
+				<td>  <span class="quantite">{{item.quantite}}</span></td>
+				<td class="date">{{item.date}}</td>
+				<td class="date">{{item.etat}}</td>
+				<td class="reservationPrixTotal"><strong>{{item.quantite*item.prix}}€</strong></td>
+				<td><button class='btn BtnAnnuReservation'>Annuler</button></td>
+			</tr>
+		{% endfor %}
+		<!--<td></td><td></td><td></td><td></td><td></td><td><h3>Total :</h3></td><td><h3 id="total"></h3></td>-->	
+
+	</table>
+</div>

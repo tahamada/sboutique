@@ -1,0 +1,26 @@
+{% for key,item in articles %}
+{% if key%4==0  %}
+<div class="container row">
+{% endif %}
+<a href="detail?idArticle={{item.article.id}}&idVendeur={{item.vendeur.id}}">
+    
+    <div class="col-md-3 col-xs-12 articleWell nopadding" id="blockArticle">
+        <div id="articleListImage" class="col-md-12 col-xs-6 nopadding">
+            {% if item.article.imageurl|replace({".":"Mini."}) is empty%}
+                <img class="center-block" src="images/article/vide.png"/>
+            {% else %}
+                <img class="center-block" src="{{ vich_uploader_asset(item.article, 'imageFile') }}" alt="{{ item.article.imageurl }}" />
+            {% endif %}    
+        </div>
+        <div class="col-md-12 col-xs-6 nopadding articleDetail">
+                <span class="col-md-12 col-xs-12" id="ListArticleDesignation"><strong>{{item.article.designation}}</strong> - <small><em>{{item.article.categorie.nom}}</em></small></span>
+                <span class="col-md-9 col-md-offset-3 col-xs-12 nopadding prix">{{item.prix}} €</span>
+                <span class="col-md-9 col-md-offset-3 col-xs-12 nopadding"><em><small>Vendu par:</small>{{item.vendeur.nomVendeur}}</em></span>
+           
+        </div>
+    </div>    
+</a>
+{% if key%4==3  %}
+</div>
+{% endif %}
+{% endfor %}

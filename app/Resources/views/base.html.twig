@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <link rel="stylesheet" href="{{ asset('css/lib/bootstrap.min.css') }}">          
+            <link rel="stylesheet" href="{{ asset('css/lib/jquery-ui.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/lib/jquery-ui.structure.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/lib/jquery-ui.theme.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/lib/slick.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/lib/slick-theme.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/style.css') }}">                      
+            <title>MyMarket</title>
+        {% endblock %}
+        <script type="text/javascript">
+            (function() {
+                if (typeof window.janrain !== 'object') window.janrain = {};
+                if (typeof window.janrain.settings !== 'object') window.janrain.settings = {};
+                
+                //janrain.settings.tokenUrl = 'https://mymarkettamou.rpxnow.com/';
+                janrain.settings.tokenUrl = 'http://boutique.dev/tokenGoogle.php';
+
+                function isReady() { janrain.ready = true; };
+                if (document.addEventListener) {
+                  document.addEventListener("DOMContentLoaded", isReady, false);
+                } else {
+                  window.attachEvent('onload', isReady);
+                }
+
+                var e = document.createElement('script');
+                e.type = 'text/javascript';
+                e.id = 'janrainAuthWidget';
+
+                if (document.location.protocol === 'https:') {
+                  e.src = 'https://rpxnow.com/js/lib/mymarkettamou/engage.js';
+                } else {
+                  e.src = 'http://widget-cdn.rpxnow.com/js/lib/mymarkettamou/engage.js';
+                }
+
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(e, s);
+            })();
+        </script>
+    </head>
+    <body>
+
+        <div class="container-fluid col-md-12">   
+            <a href="/">
+                <div class="ban"></div>
+            </a>        
+            <div class="container" id="page">
+                 
+                <div class="row">
+                    {{ include('menu.html.twig') }}
+                </div>     
+                <div class="row" id="message">
+                    {{ include('message.html.twig') }}
+                </div>        
+                <div class="row" id="content">  
+                    {% block body %}{% endblock %}
+                </div>
+                 <div class="row" id="footer">
+                    {{ include('footer.html.twig') }}
+                </div>
+            </div>
+           
+        </div>
+        <div id="panierDialog" class="row">
+        </div>
+        <script src="{{ asset('js/lib/jquery-3.2.1.min.js') }}"></script>
+        <script src="{{ asset('js/lib/popper.js') }}"></script>        
+        <script src="{{ asset('js/lib/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/lib/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('js/lib/slick.min.js') }}"></script>
+        <script src="{{ asset('js/lib/jquery.validate.min.js') }}"></script>
+        <script src="{{ asset('js/lib/jquery.dialogOptions.js') }}"></script>
+       
+        <script src="{{ asset('js/commentaire.js') }}"></script>
+
+        <script src="{{ asset('js/connexion.js') }}"/></script>
+        <script src="{{ asset('js/inputFile.js') }}"></script>
+        <script src="{{ asset('js/listDesignation.js') }}"></script>
+        <script src="{{ asset('js/mySlider.js') }}"></script>
+        <script src="{{ asset('js/formValide.js') }}"></script>
+        <script src="{{ asset('js/panier.js') }}"></script>
+        <script src="{{ asset('js/triArticle.js') }}"></script>
+        <script src="{{ asset('js/pageArticle.js') }}"></script>
+    </body>
+</html>

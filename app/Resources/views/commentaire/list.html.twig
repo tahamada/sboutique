@@ -1,0 +1,14 @@
+{% for item in commentaires %}
+<div class="commentaire">
+	<span>Posté le {{item.date|date("d/m/Y h:i:s")}} par {% if item.client.vendeur  %} {{item.client.vendeur.nomVendeur}} {% else %}{{item.client.prenom}} {{item.client.nom}} {% endif %}</span>
+	<div class="well">{{item.contenu}}</div>
+</div>
+{% endfor %}
+{% if is_granted('ROLE_USER') %}
+<span>Ajouter un commentaire:</span>
+<div>
+	<textarea></textarea>
+	<button class="btn" id="envoyerCommentaire" onclick="ajoutCommentaire()">Envoyer</button>
+</div>
+{% endif %}
+

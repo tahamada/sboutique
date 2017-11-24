@@ -1,0 +1,54 @@
+{% if detail is defined%}
+<div class="well col-md-4 col-md-offset-4">
+{% endif %}
+
+<form class="col-md-12" id="inscriptionForm" action="" method="POST">
+    
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    <div class="row">
+        {{ form_label(form.nom, "Nom") }}
+        {{ form_errors(form.nom) }}
+    </div>
+    <div class="row">
+        {{ form_widget(form.nom,{'attr':{'class':'col-xs-5'}}) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.prenom, "Prenom") }}
+        {{ form_errors(form.prenom) }}
+    </div>
+    <div class="row">
+        {{ form_widget(form.prenom,{'attr':{'class':'col-xs-5'}}) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.email, "Email") }}
+        {{ form_errors(form.email) }}
+    </div>
+    <div class="row">
+        {{ form_widget(form.email,{'attr':{'class':'col-xs-5'}}) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.adresse, "Adresse") }}
+        {{ form_errors(form.adresse) }}
+    </div>
+    <div class="row">
+        {{ form_widget(form.adresse,{'attr':{'class':'col-xs-5'}}) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.telephone, "Téléphone") }}
+        {{ form_errors(form.telephone) }}
+    </div>
+    <div class="row">
+        {{ form_widget(form.telephone,{'attr':{'class':'col-xs-5'}}) }}
+    </div>
+    <div class="row">
+        {{ form_rest(form) }}
+        {{ form_widget(form.Modifier) }}
+       
+    </div>
+    {{ form_end(form) }}
+        
+</form>
+{% if detail is defined%}
+</div>
+{% endif %}

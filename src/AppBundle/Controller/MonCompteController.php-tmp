@@ -1,0 +1,52 @@
+<?php
+
+namespace AppBundle\Controller;
+
+use AppBundle\Entity\Client;
+use AppBundle\Form\ClientType;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
+class MonCompteController extends Controller {
+	/**
+	 * @Route("/compte/{id}", name="compte")
+	 */
+	public function indexAction(Request $request, Client $client) {
+		$form = $this->get('form.factory')->create(new ClientType(), $client);
+
+		$form->handleRequest($request);
+		if ($form->isValid()) {
+			$em->flush();
+		}
+		return $this->render('monCompte/compte.html.twig', array('form' => $form->createView()));
+	}
+
+	/**
+	 * @Route("/detailss", name="sfd")
+	 */
+	public function testAction(Request $request) {
+		if ($request->query->get('idArticle') && $request->query->get('idVendeur')) {
+			$envDev = "";
+			if ($this->container->getParameter('kernel.environment') == "dev") {
+				$envDev = "app_dev.php/";
+			}
+
+			$user = $this->getUser();
+			if ($user) {
+				$idClient = $user->getClient()->getId();
+			} else {
+
+				$idClient = null;
+			}
+
+			$em       = $this->getDoctrine()->getManager();
+			$criteria = ['article' => $request->query->get('idArticle'), 'vendeur' => $request->query->get('idVendeur')];
+			$article  = $em->getRepository('AppBundle:Articlevendeur')->findOneBy($criteria);
+			return $this->render('app/detail.html.twig', [
+					'article' => $article, 'envDev' => $envDev, 'idClient' => $idClient
+				]);
+		}
+	}
+
+}
