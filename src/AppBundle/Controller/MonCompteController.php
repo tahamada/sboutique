@@ -26,8 +26,11 @@ class MonCompteController extends Controller
             $em->persist($client->getUser());
             $em->flush();            
         }
-        return $this->render('monCompte/compte.html.twig',['form' => $form->createView(),'idClient'=>$client->getId(),'client'=>$client]);
+        return $this->render('monCompte/compte.html.twig',['form' => $form->createView(),'idClient'=>$client->getId(),'client'=>$client,'categorie'=>$categories]);
     }
    
-
+    public function categories() {
+        $em = $this->getDoctrine()->getManager();
+        return $em->getRepository(Categorie::class)->findAll();
+    }
 }

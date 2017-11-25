@@ -80,7 +80,12 @@ class RegistrationController extends BaseController
         }
 
         return $this->render('@FOSUser/Registration/register.html.twig', array(
-            'form' => $form->createView(),
+            'form' => $form->createView(),'categorie'=>$categories
         ));
+    }
+
+    public function categories() {
+        $em = $this->getDoctrine()->getManager();
+        return $em->getRepository(Categorie::class)->findAll();
     }
 }
