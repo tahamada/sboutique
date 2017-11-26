@@ -19,15 +19,15 @@
         <h1 id="titreDetail">{{article.article.designation}}<small><span class="glyphicon" id="btnAjoutPanier"></span><!--<button id="ButtonAjoutPanier" name="{{article.article.id}}" onclick="ajoutPanier()">Ajouter au panier</button>--></small></h1>
         <h3>{{article.prix}} €</h3>
         <span><em><small>Vendeur:</small>{{article.vendeur.nomVendeur}}</em></span>
-        
-        {# {% if article|length > 1 %}
+        {# {{dump(articleAutreVendeur)}} #}
+        {% if articleAutreVendeur|length > 1 %}
             <h4>Vendu aussi par</h4>
-            {% for item in article %}
-                {% if item.idVendeur != idVendeur %}
-                    <span class="col-md-12"><a  href="articleDetail.php?idArticle={{item.idArticle}}&idVendeur={{item.idVendeur}}">{{item.nomVendeur}}</a> {{item.prix}} €<span>
+            {% for item in articleAutreVendeur %}
+                {% if item.vendeur.id != idVendeur %}
+                    <span class="col-md-12"><a  href="detail?idArticle={{item.article.id}}&idVendeur={{item.vendeur.id}}">{{item.vendeur.nomVendeur}}</a> {{item.prix}} €<span>
                 {% endif %} 
             {% endfor %}
-        {% endif %}  #}
+        {% endif %}  
     </div>
     <div id="descriptionArticle" class="col-md-12">
         <h3>Description de l'article :</h3>

@@ -1,6 +1,6 @@
 <span id="menuMonCompte">
 	{% if idClient is defined %}
 		<a href="compte/{{idClient}}"><span class="glyphicon glyphicon-user" id="btnUser"  title="Mon compte"></span></a>
-		<a href="logout"><span class="glyphicon glyphicon-log-out" id="btnLogOut"  title="Déconnexion"></span></a>
+		<a href="{{path('fos_user_security_logout')}}"><span class="glyphicon glyphicon-log-out" id="btnLogOut"  title="Déconnexion"></span></a>
 	{% endif %}
 </span>

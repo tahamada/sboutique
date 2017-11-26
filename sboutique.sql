@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 24 nov. 2017 à 15:15
+-- Généré le :  Dim 26 nov. 2017 à 21:34
 -- Version du serveur :  5.7.19
--- Version de PHP :  7.1.9
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -51,15 +51,26 @@ CREATE TABLE IF NOT EXISTS `article` (
   `idCategorie` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Article_Categorie_idx` (`idCategorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `article`
 --
 
 INSERT INTO `article` (`id`, `designation`, `imageUrl`, `description`, `idCategorie`) VALUES
-(1, 'test', 'Koala.jpg', 'tedtetetvze', 1),
-(2, 'tedt', 'Jellyfish.jpg', 'aze', 1);
+(1, 'PC Portable HP 15-bs028nf 15.6\"', '1505-1 (1).jpg', 'Taille de l\'écran	15,6 \"\r\nPoids du produit	2,1 Kg\r\nProcesseur	Intel Core i3\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(2, 'PC Ultra-Portable Asus VivoBook S410UA-EB065T 14\"', '1505-1.jpg', 'Taille de l\'écran	14 \"\r\nPoids du produit	1,43 Kg\r\nProcesseur	Intel Core i5\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(3, 'PC Ultra-Portable Lenovo 120S-14IAP 14\"', '1505-1 (2).jpg', 'Taille de l\'écran	14 \"\r\nPoids du produit	1,5 Kg\r\nProcesseur	Intel Pentium N4200\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(4, 'PC Ultra-Portable Asus E403NA-FA090T 14\"', '1505-1 (3).jpg', 'Taille de l\'écran	14 \"\r\nPoids du produit	1,5 Kg\r\nProcesseur	Intel Celeron\r\nSystème d\'exploitation	Microsoft Windows 10 S', 1),
+(5, 'PC Portable Acer Predator Helios 300 G3-572-72Z8 15.6\" Gaming', 'PC-Portable-Acer-Predator-Helios-300-G3-572-72Z8-15-6-Gaming.jpg', 'Taille de l\'écran	15,6 \"\r\nPoids du produit	2,7 Kg\r\nProcesseur	Intel Core i7\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(6, 'PC Portable Acer Aspire ES1-533-P9CR 15.6\"', 'PC-Portable-Acer-Aspire-ES1-533-P9CR-15-6.jpg', 'Taille de l\'écran	15,6 \"\r\nPoids du produit	2,4 Kg\r\nProcesseur	Intel Pentium\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(7, 'Apple MacBook Air 13.3\'\' LED 128 Go SSD 8 Go RAM Intel Core i5 bicœur à 1.8 Ghz MQD32FN Nouveau', 'Apple-MacBook-Air-13-3-LED-128-Go-D-8-Go-RAM-Intel-Core-i5-bicoeur-a-1-8-Ghz-MQD32FN-Nouveau.jpg', 'Taille de l\'écran	13,3 \"\r\nPoids du produit	1,35 Kg\r\nProcesseur	Intel Core i5\r\nSystème d\'exploitation	Mac OS', 1),
+(8, 'PC Portable Asus ROG Strix GL753VE-GC198T 17.3\"', '1505-1 (4).jpg', 'Taille de l\'écran	17,3 \"\r\nPoids du produit	3 Kg\r\nProcesseur	Intel Core i7\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(9, 'PC Portable Acer Aspire 7 A715-71G-75B3 15.6\"', 'PC-Portable-Acer-Aspire-7-A715-71G-75B3-15-6.jpg', 'PC Portable Acer Aspire 7 A715-71G-75B3 15.6\"', 1),
+(10, 'PC Hybride Microsoft Surface Pro 12.3\" Tactile Intel Core M3 4 Go RAM 128 Go SSD', 'PC-Hybride-Microsoft-Surface-Pro-12-3-Tactile-Intel-Core-M3-4-Go-RAM-128-Go-D.jpg', 'Taille de l\'écran	12,3 \"\r\nPoids du produit	786 g\r\nProcesseur	Intel Core m3\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(11, 'PC Hybride Lenovo Yoga 520-14IKB 14\" Tactile Intel Core i3 256 Go + Stylet', 'PC-Hybride-Lenovo-Yoga-520-14IKB-14-Tactile-Intel-Core-i3-256-Go-Stylet.jpg', 'Taille de l\'écran	14 \"\r\nPoids du produit	1,7 Kg\r\nProcesseur	Intel Core i3\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(12, 'PC Ultra-Portable Asus K401UQ-FA183T 14\"', '1505-1 (5).jpg', 'Taille de l\'écran	14 \"\r\nPoids du produit	1,65 Kg\r\nProcesseur	Intel Core i5\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(13, 'PC Ultra-Portable HP Envy 13-ad002nf 13.3\"', '1505-1 (6).jpg', 'Taille de l\'écran	13,3 \"\r\nPoids du produit	1,32 Kg\r\nProcesseur	Intel Core i7\r\nSystème d\'exploitation	Microsoft Windows 10', 1);
 
 -- --------------------------------------------------------
 
@@ -78,7 +89,7 @@ CREATE TABLE IF NOT EXISTS `articlevendeur` (
   PRIMARY KEY (`id`),
   KEY `IDX_E900E9957294869C` (`article_id`),
   KEY `IDX_E900E995858C065E` (`vendeur_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `articlevendeur`
@@ -86,7 +97,19 @@ CREATE TABLE IF NOT EXISTS `articlevendeur` (
 
 INSERT INTO `articlevendeur` (`id`, `article_id`, `vendeur_id`, `quantite`, `payableNFois`, `prix`) VALUES
 (3, 2, 6, 14, 0, 23.3),
-(4, 1, 6, 12, 0, 112.1);
+(4, 1, 6, 12, 0, 112.1),
+(5, 3, 6, 32, 0, 449.99),
+(6, 4, 6, 65, 0, 299.99),
+(7, 5, 6, 35, 0, 1438.89),
+(8, 6, 6, 21, 0, 399.99),
+(9, 7, 6, 65, 0, 1099.99),
+(10, 8, 6, 21, 0, 999.99),
+(11, 9, 6, 35, 0, 1050.08),
+(12, 10, 6, 32, 0, 827.62),
+(13, 11, 6, 21, 0, 649.99),
+(14, 12, 6, 54, 0, 799.99),
+(15, 13, 6, 32, 0, 1162.57),
+(16, 6, 8, 21, 0, 353);
 
 -- --------------------------------------------------------
 
@@ -127,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `client` (
   `vendeur_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_C7440455858C065E` (`vendeur_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `client`
@@ -136,9 +159,10 @@ CREATE TABLE IF NOT EXISTS `client` (
 INSERT INTO `client` (`id`, `nom`, `prenom`, `email`, `adresse`, `telephone`, `googleIdentifier`, `vendeur_id`) VALUES
 (1, 'tamoo', 'tra', 'gdfgr@pot.fr', NULL, NULL, NULL, NULL),
 (2, 'test', NULL, 'rere@mlk.fr', NULL, NULL, NULL, NULL),
-(3, 'azerty', NULL, 'fnac@vendeur.com', NULL, NULL, NULL, 6),
-(4, 'rert', NULL, 'fnac2@vendeur.com', NULL, NULL, NULL, 6),
-(5, 'tamoo', NULL, 'tamoo@hotmail.fr', NULL, NULL, NULL, NULL);
+(3, 'azerty', NULL, 'fnac@vendeur.com', NULL, NULL, NULL, 7),
+(4, 'rerto', 'moi', 'fnac2@vendeur.com', NULL, NULL, NULL, 6),
+(5, 'Ahamada', 'Tamou', 'tamoo@hotmail.fr', NULL, NULL, NULL, NULL),
+(6, 'yoyo', NULL, 'cdiscount@vendeur.com', NULL, NULL, NULL, 8);
 
 -- --------------------------------------------------------
 
@@ -220,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `fos_user` (
   UNIQUE KEY `UNIQ_957A6479A0D96FBF` (`email_canonical`),
   UNIQUE KEY `UNIQ_957A6479C05FB297` (`confirmation_token`),
   UNIQUE KEY `UNIQ_957A647919EB6921` (`client_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `fos_user`
@@ -235,9 +259,10 @@ INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_
 (6, 'gdfgr@pot.fr', 'gdfgr@pot.fr', 'gdfgr@pot.fr', 'gdfgr@pot.fr', 1, NULL, '$2y$13$4N4HyFBvc2xkj6M6J3V9pO9s1Q2dg8V6AaUX8JEc2i5C9XLr6vc7e', '2017-11-22 14:41:09', NULL, NULL, 'a:0:{}', 'tamoo', NULL),
 (7, 'vendeur@vendeur.com', 'vendeur@vendeur.com', 'vendeur@vendeur.com', 'vendeur@vendeur.com', 1, NULL, '$2y$13$4N4HyFBvc2xkj6M6J3V9pO9s1Q2dg8V6AaUX8JEc2i5C9XLr6vc7e', '2017-11-23 09:08:13', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'vendeur', NULL),
 (8, 'rere@mlk.fr', 'rere@mlk.fr', 'rere@mlk.fr', 'rere@mlk.fr', 1, NULL, '$2y$13$gFeYiVqEzEhTnY5pAAgmUeg/jfysj9rOgf9Qj79sg1ymp10m9cqo2', '2017-11-22 15:37:14', NULL, NULL, 'a:1:{i:0;s:11:\"ROLE_CLIENT\";}', 'test', NULL),
-(9, 'fnac@vendeur.com', 'fnac@vendeur.com', 'fnac@vendeur.com', 'fnac@vendeur.com', 1, NULL, '$2y$13$aUwx8PK.OcyMfpkGZMhEtOnkFgVumCo5gvZNn5unLffx5x23l9TAK', '2017-11-23 09:12:46', NULL, NULL, 'a:1:{i:0;s:11:\"ROLE_CLIENT\";}', 'azerty', NULL),
-(10, 'fnac2@vendeur.com', 'fnac2@vendeur.com', 'fnac2@vendeur.com', 'fnac2@vendeur.com', 1, NULL, '$2y$13$hkLDHPb6h/k2xzHYniEvpOJcotqYrvtLgPGfMROG2NhGHf841gmoG', '2017-11-23 15:31:52', NULL, NULL, 'a:1:{i:0;s:11:\"ROLE_CLIENT\";}', 'rert', 4),
-(11, 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 1, NULL, '$2y$13$2ga4hOUxfkZ5m1cfCI/eJuJh3aWRvXbhTwTWnBF4WUdnQdcjIKqOW', '2017-11-24 14:10:56', NULL, NULL, 'a:1:{i:0;s:11:\"ROLE_CLIENT\";}', 'tamoo', 5);
+(9, 'fnac@vendeur.com', 'fnac@vendeur.com', 'fnac@vendeur.com', 'fnac@vendeur.com', 1, NULL, '$2y$13$aUwx8PK.OcyMfpkGZMhEtOnkFgVumCo5gvZNn5unLffx5x23l9TAK', '2017-11-23 09:12:46', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'azerty', NULL),
+(10, 'fnac2@vendeur.com', 'fnac2@vendeur.com', 'fnac2@vendeur.com', 'fnac2@vendeur.com', 1, NULL, '$2y$13$NejuOV1X1Wt2aMyYUnVfeuOvP5OFrFOhJjKnCAHDB8cAT1uoJ8ZzK', '2017-11-26 19:59:13', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'rert', 4),
+(11, 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 1, NULL, '$2y$13$2ga4hOUxfkZ5m1cfCI/eJuJh3aWRvXbhTwTWnBF4WUdnQdcjIKqOW', '2017-11-26 20:19:43', NULL, NULL, 'a:1:{i:0;s:19:\"ROLE_ADMINISTRATEUR\";}', 'tamoo', 5),
+(12, 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 1, NULL, '$2y$13$37USBL8my9CEQwdDqBw/KOycAsiFhuif1gy7tvjkgrGKtk0ibABja', '2017-11-26 21:18:11', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'yoyo', 6);
 
 -- --------------------------------------------------------
 
@@ -340,14 +365,16 @@ CREATE TABLE IF NOT EXISTS `vendeur` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_7AF49996A455ACCF` (`idClient`),
   KEY `FK_Vendeur_Client` (`idClient`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `vendeur`
 --
 
 INSERT INTO `vendeur` (`id`, `adresseVendeur`, `nomVendeur`, `idClient`) VALUES
-(6, 'rue de la rue', 'fnac', NULL);
+(6, 'rue de la rue', 'fnac', NULL),
+(7, '123 rt', 'fnac2', NULL),
+(8, '32 rue cdec ds', 'Cdiscount', NULL);
 
 --
 -- Contraintes pour les tables déchargées

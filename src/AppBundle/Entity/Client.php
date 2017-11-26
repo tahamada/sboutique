@@ -65,6 +65,10 @@ class Client
      */
     private $googleidentifier;
 
+    private $password;
+
+    private $password2;
+
     /**
     *
     * @ORM\OneToOne(targetEntity="User",mappedBy="client")
@@ -366,5 +370,45 @@ class Client
     public function getReservations()
     {
         return $this->reservations;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param mixed $password
+     *
+     * @return self
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPassword2()
+    {
+        return $this->password2;
+    }
+
+    /**
+     * @param mixed $password2
+     *
+     * @return self
+     */
+    public function setPassword2($password2)
+    {
+        $this->password2 = $password2;
+
+        return $this;
     }
 }

@@ -18,17 +18,18 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorie <span class="caret"></span></a>
           <ul class="dropdown-menu">
-           {% for item in categorie %}
-              <li><a href="/?categorie={{item.id}}">{{item.nom}}</a></li>
-            {% endfor %}
+            {% if categorie is defined %} 
+              {% for item in categorie %}
+                <li><a href="/?categorie={{item.id}}">{{item.nom}}</a></li>
+              {% endfor %}
+            {% endif %}
           </ul>
         </li>
         {% if is_granted('ROLE_ADMIN') %}
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
           <ul class="dropdown-menu">
-              <li><a href="">Ajouter Article</a></li>
-              <li><a href="">Gerer Categorie</a></li>
+              <li><a href="{{path('admin')}}">Administration</a></li>
           </ul>
         </li>
         {% endif %}
@@ -51,9 +52,11 @@
           <input type="text" name='designation' class="form-control" placeholder="rechercher un article">
           <select class="form-control" name="categorie">
             <option value="all">All</option>
-           {% for item in categorie %}
+            {% if categorie is defined %}
+              {% for item in categorie %}
                 <option value="{{item.id}}">{{item.nom}}</option>
-            {% endfor %}
+              {% endfor %}
+            {% endif %}
           </select>
         </div>
         <button type="submit" name="recherche" class="btn btn-default"><span class="glyphicon glyphicon-search"  title="Rechercher"></span></button>

@@ -13,7 +13,7 @@
 <div class="container-fluid" id="sliderContainer">
     <div class="col-md-12 col-md-offset-0 nopadding row" id="mainSlider">
         {% for item in articlesSlide %}
-            <li id="listSlide" class="col-md-3" ><a href="{{baseurl}}articleDetail.php?idArticle={{item.idArticle}}"> <img src="{{item.imageUrl}}"></a></li>
+            <li id="listSlide" class="col-md-3" ><a href="detail?idArticle={{item.article.id}}&idVendeur={{item.vendeur.id}}"> <img src="{{ vich_uploader_asset(item.article, 'imageFile') }}"></a></li>
         {% endfor %}
     </div>
 </div>

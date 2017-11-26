@@ -8,11 +8,12 @@ security:
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin, role: ROLE_ADMIN }
+        - { path: ^/admin, role: ROLE_ADMIN}
 
     role_hierarchy:
         ROLE_CLIENT:  ROLE_USER
         ROLE_VENDEUR: [ROLE_ADMIN,ROLE_USER]
+        ROLE_ADMINISTRATEUR: [ROLE_ADMIN,ROLE_USER,ROLE_SUPER]
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:

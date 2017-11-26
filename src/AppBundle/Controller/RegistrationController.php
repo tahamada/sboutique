@@ -12,6 +12,7 @@ use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 
 use AppBundle\Entity\Client;
+use AppBundle\Entity\Categorie;
 
 class RegistrationController extends BaseController
 {

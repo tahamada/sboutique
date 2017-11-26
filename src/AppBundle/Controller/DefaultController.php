@@ -56,7 +56,27 @@ class DefaultController extends Controller
             
         }
 
+        $limit=12;
+        $offset=0;
+        $page=1;
+        if($request->query->get('page')!=null && is_numeric($request->query->get('page')) && intval($request->query->get('page'))>0){
+            $offset=(intval($request->query->get('page'))-1)*intval($limit);
+            $page=$request->query->get('page');
+        }
 
+        //compte le nombre d'article 
+        $nbarticles = $em->getRepository('AppBundle:Articlevendeur')
+        ->createQueryBuilder('c')
+         ->select('COUNT(c)')
+         ->getQuery()
+         ->getSingleScalarResult();
+
+        //article du slider
+        $slideAricle= $em->getRepository('AppBundle:Articlevendeur')->findBy(
+            array(),array('id'=>'desc'),5
+        );
+
+        //article de la recherche
         //$articles = $em->getRepository('AppBundle:Articlevendeur')->findBy($criteria,$order, $limit,$offset);
     	$articles = $em->getRepository('AppBundle:Articlevendeur')
     	->createQueryBuilder('av')
@@ -71,8 +91,13 @@ class DefaultController extends Controller
                 ->setFirstResult($offset)
                 ->getQuery()->getResult();
 
-        return $this->render('app/index.html.twig', [
-            'articlesSlide' => [], 'nbArticle'=> count($articles), 'page'=>1,'limit'=>12,'articles'=>$articles,'envDev'=>$envDev,'idClient'=>$idClient,'categorie'=>$categories
+        if($request->query->get('mode')!=null && $request->query->get('mode')=='ajax')
+                $twig="app/articleList.html.twig";            
+        else
+            $twig="app/index.html.twig";
+
+        return $this->render($twig, [
+            'articlesSlide' => [], 'nbArticle'=> $nbarticles, 'page'=>$page,'limit'=>$limit,'articles'=>$articles,'envDev'=>$envDev,'idClient'=>$idClient,'categorie'=>$categories, 'articlesSlide'=>$slideAricle
         ]);
     }
 
@@ -92,10 +117,15 @@ class DefaultController extends Controller
             else
                 $idClient=null;
             $em = $this->getDoctrine()->getManager();
-            $criteria=['article'=>$request->query->get('idArticle'),'vendeur'=>$request->query->get('idVendeur')];
+            $criteria=['article'=>$request->query->get('idArticle'),'vendeur'=>$request->query->get('idVendeur')];           
             $article = $em->getRepository('AppBundle:Articlevendeur')->findOneBy($criteria);
+
+            $criteria=['article'=>$request->query->get('idArticle')];
+            $articleAutreVendeur = $em->getRepository('AppBundle:Articlevendeur')->findBy($criteria);
+
+
             return $this->render('app/detail.html.twig', [
-                'article' => $article, 'envDev'=>$envDev,'idClient'=>$idClient,'categorie'=>$categories
+                'article' => $article, 'envDev'=>$envDev,'idClient'=>$idClient,'categorie'=>$categories,'articleAutreVendeur'=>$articleAutreVendeur,'idVendeur'=>$request->query->get('idVendeur')
             ]);
         }
     } 

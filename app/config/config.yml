@@ -76,6 +76,11 @@ easy_admin:
     entities:
         Categorie:
             class: AppBundle\Entity\Categorie
+            permissions:
+                list:  ['ROLE_ADMIN']
+                create:  ['ROLE_ADMIN']
+                edit:  ['ROLE_ADMIN']
+                delete:  ['ROLE_ADMIN']
             label: 'Categorie'
             list:
                 title: 'Liste de catégories'
@@ -90,6 +95,11 @@ easy_admin:
                 
         Article:
             class: AppBundle\Entity\Article
+            permissions:
+                list:  ['ROLE_ADMIN']
+                create:  ['ROLE_ADMIN']
+                edit:  ['ROLE_SUPER']
+                delete:  ['ROLE_SUPER']
             form:
                 fields:
                     - 'designation'
@@ -107,6 +117,7 @@ easy_admin:
                     - { name: 'delete', icon: 'remove', label: '', title: 'Editer' }
                     
                 fields:
+                    - 'id'
                     - 'designation'
                     - { property: 'imageurl', type: 'image', base_path: '%app.path.product_images%' }
                     - 'categorie.nom'
@@ -118,7 +129,12 @@ easy_admin:
                     - 'categorie.nom'
         
         Article_du_vendeur:
-            class: AppBundle\Entity\Articlevendeur         
+            class: AppBundle\Entity\Articlevendeur
+            permissions:
+                list:  ['ROLE_ADMIN']
+                create:  ['ROLE_ADMIN']
+                edit:  ['ROLE_SUPER']
+                delete:  ['ROLE_SUPER']         
             form:
                 fields:
                     - { property: 'article', type: 'easyadmin_autocomplete', type_options: { class: 'AppBundle\Entity\Article' } }
@@ -134,13 +150,17 @@ easy_admin:
 
         User:
             class: AppBundle\Entity\User
+            permissions:
+                list:  ['ROLE_SUPER']
+                create:  ['ROLE_SUPER']
+                edit:  ['ROLE_SUPER']
+                delete:  ['ROLE_SUPER']
             form:
                 fields:
                     - 'email' 
                     - 'nom'
-                    - { property: 'password', type: 'password' }
                     - { property: 'enabled', type: 'checkbox' }
-                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'CLIENT': 'ROLE_CLIENT', 'VENDEUR': 'ROLE_VENDEUR' } } }
+                    - { property: 'roles', type: 'choice', type_options: { multiple: true, choices: { 'CLIENT': 'ROLE_CLIENT', 'VENDEUR': 'ROLE_VENDEUR', 'ADMINISTRATEUR':'ROLE_ADMINISTRATEUR' } } }
             list:
                 fields:
                     - 'Email'
@@ -150,6 +170,11 @@ easy_admin:
 
         Client:
             class: AppBundle\Entity\Client
+            permissions:
+                list:  ['ROLE_SUPER']
+                create:  ['ROLE_SUPER']
+                edit:  ['ROLE_SUPER']
+                delete:  ['ROLE_SUPER']
             form:
                 fields:
                     - 'nom' 
@@ -162,6 +187,11 @@ easy_admin:
                     - { property: 'user', type:'entity', type_options:{class:'AppBundle:User',choice_label:'email'}}
         Vendeur:
             class: AppBundle\Entity\Vendeur
+            permissions:
+                list:  ['ROLE_SUPER']
+                create:  ['ROLE_SUPER']
+                edit:  ['ROLE_SUPER']
+                delete:  ['ROLE_SUPER']
             form:
                 fields:
                     - 'nomVendeur'

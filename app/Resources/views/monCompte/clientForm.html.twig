@@ -28,6 +28,20 @@
         {{ form_widget(form.email,{'attr':{'class':'col-xs-5'}}) }}
     </div>
     <div class="row">
+        {{ form_label(form.password.first, "Mot de passe") }}
+        {{ form_errors(form.password.first) }}
+    </div>
+    <div class="row">
+        {{ form_widget(form.password.first,{'attr':{'class':'col-xs-5'}}) }}
+    </div>
+    <div class="row">
+        {{ form_label(form.password.second, "Répéter votre Mot de passe") }}
+        {{ form_errors(form.password.second) }}
+    </div>
+    <div class="row">
+        {{ form_widget(form.password.second,{'attr':{'class':'col-xs-5'}}) }}
+    </div>
+    <div class="row">
         {{ form_label(form.adresse, "Adresse") }}
         {{ form_errors(form.adresse) }}
     </div>
