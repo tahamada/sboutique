@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 26 nov. 2017 à 21:34
+-- Généré le :  lun. 27 nov. 2017 à 21:58
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `article` (
   `idCategorie` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_Article_Categorie_idx` (`idCategorie`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `article`
@@ -70,7 +70,9 @@ INSERT INTO `article` (`id`, `designation`, `imageUrl`, `description`, `idCatego
 (10, 'PC Hybride Microsoft Surface Pro 12.3\" Tactile Intel Core M3 4 Go RAM 128 Go SSD', 'PC-Hybride-Microsoft-Surface-Pro-12-3-Tactile-Intel-Core-M3-4-Go-RAM-128-Go-D.jpg', 'Taille de l\'écran	12,3 \"\r\nPoids du produit	786 g\r\nProcesseur	Intel Core m3\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
 (11, 'PC Hybride Lenovo Yoga 520-14IKB 14\" Tactile Intel Core i3 256 Go + Stylet', 'PC-Hybride-Lenovo-Yoga-520-14IKB-14-Tactile-Intel-Core-i3-256-Go-Stylet.jpg', 'Taille de l\'écran	14 \"\r\nPoids du produit	1,7 Kg\r\nProcesseur	Intel Core i3\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
 (12, 'PC Ultra-Portable Asus K401UQ-FA183T 14\"', '1505-1 (5).jpg', 'Taille de l\'écran	14 \"\r\nPoids du produit	1,65 Kg\r\nProcesseur	Intel Core i5\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
-(13, 'PC Ultra-Portable HP Envy 13-ad002nf 13.3\"', '1505-1 (6).jpg', 'Taille de l\'écran	13,3 \"\r\nPoids du produit	1,32 Kg\r\nProcesseur	Intel Core i7\r\nSystème d\'exploitation	Microsoft Windows 10', 1);
+(13, 'PC Ultra-Portable HP Envy 13-ad002nf 13.3\"', '1505-1 (6).jpg', 'Taille de l\'écran	13,3 \"\r\nPoids du produit	1,32 Kg\r\nProcesseur	Intel Core i7\r\nSystème d\'exploitation	Microsoft Windows 10', 1),
+(14, 'TEENO Smartphone 4G Débloqué 6 Pouces 1280 x 720 IPS HD Écran 1.3GHz Quad Core Android 5.1 Double SIM Caméras 8.0MP', 'teeno-smartphone-4g-debloque-6-pouces-1280-x-720-i.jpg', '6\" - Tactile\r\nGénération à haut débit mobile : 4G\r\nSystème d\'exploitation : Android 5.1\r\nCouleur du boitier : Or', 2),
+(15, 'SONY Xperia XA1 Plus Bleu 32 Go', 'sony-xperia-xa1-plus-bleu-32-go.jpg', 'Ecran 5.5\" Full HD - Dual SIM - Stockage 32 Go - RAM 4Go - Lecteur empreinte - 4G cat 4 - Processeur Octa-core 64bit - Appareil photo 23 Mpx+Caméra frontal 8 Mpx - Capteur vidéo Full HD avec stabilisation optique SteadyShot - Batterie 3430 mAh - USB type C - WiFi - NFC - Bluetooth 4.2 - Recharge rapide : Technologie Pump Express+ 2.0 - Garantie 2 ans', 2);
 
 -- --------------------------------------------------------
 
@@ -89,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `articlevendeur` (
   PRIMARY KEY (`id`),
   KEY `IDX_E900E9957294869C` (`article_id`),
   KEY `IDX_E900E995858C065E` (`vendeur_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `articlevendeur`
@@ -109,7 +111,9 @@ INSERT INTO `articlevendeur` (`id`, `article_id`, `vendeur_id`, `quantite`, `pay
 (13, 11, 6, 21, 0, 649.99),
 (14, 12, 6, 54, 0, 799.99),
 (15, 13, 6, 32, 0, 1162.57),
-(16, 6, 8, 21, 0, 353);
+(16, 6, 8, 21, 0, 353),
+(17, 14, 8, 123, 0, 78.88),
+(18, 15, 8, 35, 0, 299);
 
 -- --------------------------------------------------------
 
@@ -262,7 +266,7 @@ INSERT INTO `fos_user` (`id`, `username`, `username_canonical`, `email`, `email_
 (9, 'fnac@vendeur.com', 'fnac@vendeur.com', 'fnac@vendeur.com', 'fnac@vendeur.com', 1, NULL, '$2y$13$aUwx8PK.OcyMfpkGZMhEtOnkFgVumCo5gvZNn5unLffx5x23l9TAK', '2017-11-23 09:12:46', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'azerty', NULL),
 (10, 'fnac2@vendeur.com', 'fnac2@vendeur.com', 'fnac2@vendeur.com', 'fnac2@vendeur.com', 1, NULL, '$2y$13$NejuOV1X1Wt2aMyYUnVfeuOvP5OFrFOhJjKnCAHDB8cAT1uoJ8ZzK', '2017-11-26 19:59:13', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'rert', 4),
 (11, 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 'tamoo@hotmail.fr', 1, NULL, '$2y$13$2ga4hOUxfkZ5m1cfCI/eJuJh3aWRvXbhTwTWnBF4WUdnQdcjIKqOW', '2017-11-26 20:19:43', NULL, NULL, 'a:1:{i:0;s:19:\"ROLE_ADMINISTRATEUR\";}', 'tamoo', 5),
-(12, 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 1, NULL, '$2y$13$37USBL8my9CEQwdDqBw/KOycAsiFhuif1gy7tvjkgrGKtk0ibABja', '2017-11-26 21:18:11', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'yoyo', 6);
+(12, 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 'cdiscount@vendeur.com', 1, NULL, '$2y$13$37USBL8my9CEQwdDqBw/KOycAsiFhuif1gy7tvjkgrGKtk0ibABja', '2017-11-27 21:43:38', NULL, NULL, 'a:1:{i:0;s:12:\"ROLE_VENDEUR\";}', 'yoyo', 6);
 
 -- --------------------------------------------------------
 
