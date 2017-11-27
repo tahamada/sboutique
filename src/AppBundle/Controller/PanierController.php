@@ -127,7 +127,16 @@ class PanierController extends Controller
 
         $cookie = new Cookie('panier', serialize($panier), strtotime('now + 24 hours'));  
         
-        $content=json_encode(["reponse"=>['nbPanier'=>count($panier)]]);
+        $nb=0;
+        if(isset($panier) && count($panier)>0){
+            foreach($panier as $a){
+                if(!empty($a))
+                    $nb+=$a['nb'];
+            }
+            //$nb=count($panier);
+        }
+        
+        $content=json_encode(["reponse"=>['nbPanier'=>count($nb)]]);
         $response=new response($content);
         $response->headers->setCookie($cookie);
 

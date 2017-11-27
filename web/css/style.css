@@ -11,7 +11,7 @@ body{
 	background-image:url("../images/Digital_Marketing_Agency.jpg");
 	background-size:cover;
 	width: 100%;
-	height: 80px;
+	height: 110px;
 }
 
 /*.vertical-align {
@@ -137,7 +137,7 @@ div.ui-dialog-titlebar{
 }
 
 .articleWell{
-    border: 1px solid #9c1b54;
+    /*border: 1px solid #9c1b54;*/
     margin-bottom: 5px;
     padding: 0px;
     border-radius: 5px 5px 0px 0px;

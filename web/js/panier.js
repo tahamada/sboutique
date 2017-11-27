@@ -159,6 +159,7 @@ $( document ).ready(function(){
         })
         .done(function(reponse) {
           panierFunction();
+          $("#nbPanier").text("("+reponse['reponse']["nbPanier"]+")");
         })
         .fail(function() {
             console.log("fail");
