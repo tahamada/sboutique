@@ -201,6 +201,12 @@ easy_admin:
                     - 'id'
                     - 'nomVendeur'
                     - 'adresseVendeur'
+        Commentaire:
+            class: AppBundle\Entity\Vendeur
+                list:  ['ROLE_SUPER']
+                create:  ['ROLE_SUPER']
+                edit:  ['ROLE_SUPER']
+                delete:  ['ROLE_SUPER']
 
     design:
         brand_color: '#9c1b54'
