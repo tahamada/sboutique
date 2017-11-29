@@ -227,7 +227,7 @@ fos_user:
     user_class: AppBundle\Entity\User
     from_email:
         address: "mymarketboutique@gmail.com"
-        sender_name: "%mailer_user%"
+        sender_name: "mymarketboutique"
     registration:
         form:
             type: AppBundle\Form\RegistrationType
