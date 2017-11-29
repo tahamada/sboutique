@@ -66,8 +66,14 @@ class DefaultController extends Controller
 
         //compte le nombre d'article 
         $nbarticles = $em->getRepository('AppBundle:Articlevendeur')
-        ->createQueryBuilder('c')
-         ->select('COUNT(c)')
+        ->createQueryBuilder('av')
+         ->select('COUNT(av)')
+         ->join('av.article', 'a')
+                ->join('a.categorie','c')                     
+                ->where('a.designation LIKE :designation')
+                ->setParameter('designation', "%".$designation."%")
+                ->andWhere("$opcategorie = :cid")
+                ->setParameter('cid', $categorie)
          ->getQuery()
          ->getSingleScalarResult();
 
