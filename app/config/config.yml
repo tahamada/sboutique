@@ -203,6 +203,7 @@ easy_admin:
                     - 'adresseVendeur'
         Commentaire:
             class: AppBundle\Entity\Vendeur
+            permissions:
                 list:  ['ROLE_SUPER']
                 create:  ['ROLE_SUPER']
                 edit:  ['ROLE_SUPER']
