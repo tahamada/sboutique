@@ -202,12 +202,28 @@ easy_admin:
                     - 'nomVendeur'
                     - 'adresseVendeur'
         Commentaire:
-            class: AppBundle\Entity\Vendeur
+            class: AppBundle\Entity\Message
+            disabled_actions: ['delete','new']
             permissions:
                 list:  ['ROLE_SUPER']
                 create:  ['ROLE_SUPER']
                 edit:  ['ROLE_SUPER']
                 delete:  ['ROLE_SUPER']
+            form:
+                fields:
+                    - 'contenu' 
+                    - { property: 'visible', type: 'checkbox' }
+            list:
+                actions: 
+                    - { name: 'show', icon: 'search', label: '', title: 'Voir' }
+                    - { name: 'edit', icon: 'pencil', label: '', title: 'Editer' }
+                fields:
+                    - 'id'
+                    - 'date'
+                    - 'contenu'
+                    - 'visible'
+                    - 'article'
+                    - 'client'
 
     design:
         brand_color: '#9c1b54'

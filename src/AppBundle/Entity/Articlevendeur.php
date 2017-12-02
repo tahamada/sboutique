@@ -281,4 +281,8 @@ class Articlevendeur
     {
         return $this->commentaires;
     }
+
+    public function __toString(){
+        return $this->getArticle()->getDesignation();
+    }
 }

@@ -18,6 +18,8 @@ class RegistrationController extends BaseController
 {
     public function registerAction(Request $request)
     {
+        $categories = $this->categories();
+
         /** @var $formFactory FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager UserManagerInterface */

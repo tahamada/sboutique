@@ -151,7 +151,7 @@ div.ui-dialog-titlebar{
 }
 
 .articleWell img{
-	width:100%;
+	//width:100%;
 }
 
 #articlesList a{
@@ -412,6 +412,25 @@ a:hover{
 
 #fosBlock input[type="submit"]:hover{
 	background-color:#7b1341;
+}
+
+#mainSlider{
+	font-weight: bold;
+	color:#9c1b54;
+	font-style: italic;
+}
+
+.slideTextPrix{
+	position: absolute;		
+	top:25%;
+	left:25%;
+	font-size: 3rem;
+}
+.slideTextDesignation{
+	position: absolute;	
+	top:90%;
+	left:25%;
+	font-size: 1.5rem;
 }
 
 @media screen and (max-width: 1000px)

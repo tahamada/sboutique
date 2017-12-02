@@ -13,7 +13,7 @@
             {% endif %}    
         </div>
         <div class="col-md-12 col-xs-6 nopadding articleDetail">
-                <span class="col-md-12 col-xs-12" id="ListArticleDesignation"><strong>{{item.article.designation}}</strong> - <small><em>{{item.article.categorie.nom}}</em></small></span>
+                <span class="col-md-12 col-xs-12" id="ListArticleDesignation"><strong>{{item.article.designation|truncate(150,true)}}</strong> - <small><em>{{item.article.categorie.nom}}</em></small></span>
                 <span class="col-md-9 col-md-offset-3 col-xs-12 nopadding prix">{{item.prix|number_format(2, ',', '.')}} €</span>
                 <span class="col-md-9 col-md-offset-3 col-xs-12 nopadding"><em><small>Vendu par:</small>{{item.vendeur.nomVendeur}}</em></span>          
         </div>
