@@ -16,3 +16,4 @@
 /vendor/
 /web/bundles/
 *.php-tmp
+node_modules/

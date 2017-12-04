@@ -416,7 +416,8 @@ a:hover{
 
 #mainSlider{
 	font-weight: bold;
-	color:#9c1b54;
+	//color:#710535;
+	color:white;
 	font-style: italic;
 }
 
@@ -425,12 +426,18 @@ a:hover{
 	top:25%;
 	left:25%;
 	font-size: 3rem;
+	padding:5px;
+	background-color:#9c1b54; 
+	border-radius: 25px;
 }
 .slideTextDesignation{
 	position: absolute;	
-	top:90%;
+	top:82%;
 	left:25%;
 	font-size: 1.5rem;
+	padding:5px;
+	background-color:#9c1b54; 
+	border-radius: 5px;
 }
 
 @media screen and (max-width: 1000px)
