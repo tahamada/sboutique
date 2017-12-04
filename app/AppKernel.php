@@ -19,6 +19,7 @@ class AppKernel extends Kernel
 			new Vich\UploaderBundle\VichUploaderBundle(),
 			new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 			new FOS\UserBundle\FOSUserBundle(),
+			new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new AppBundle\AppBundle(),
         ];
 

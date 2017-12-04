@@ -9,7 +9,7 @@
             {% if item.article.imageurl|replace({".":"Mini."}) is empty%}
                 <img class="center-block" src="images/article/vide.png"/>
             {% else %}
-                <img class="center-block" src="{{ vich_uploader_asset(item.article, 'imageFile') }}" alt="{{ item.article.imageurl }}" />
+                <img class="center-block img-responsive" src="{{ vich_uploader_asset(item.article, 'imageFile') }}" alt="{{ item.article.imageurl }}" />
             {% endif %}    
         </div>
         <div class="col-md-12 col-xs-6 nopadding articleDetail">

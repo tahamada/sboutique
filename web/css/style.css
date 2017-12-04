@@ -388,6 +388,12 @@ a:hover{
 
 #blockArticle #ListArticleDesignation{
 	height: 100px ;
+	overflow: hidden;
+}
+
+#filterPrice{
+	margin-bottom:5px;
+	top:23px;
 }
 
 #footer a{

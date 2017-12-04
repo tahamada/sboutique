@@ -12,7 +12,9 @@ use AppBundle\Entity\Categorie;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", 
+     * options = { "expose" = true },
+     * name="homepage")
      */
     public function indexAction(Request $request)
     {
@@ -91,8 +93,20 @@ class DefaultController extends Controller
                 ->where('a.designation LIKE :designation')
                 ->setParameter('designation', "%".$designation."%")
                 ->andWhere("$opcategorie = :cid")
-                ->setParameter('cid', $categorie)
-                ->orderBy('av.prix', $tri)
+                ->setParameter('cid', $categorie);
+
+        if($request->query->get('prixMin')!=null && is_numeric($request->query->get('prixMin')) && intval($request->query->get('prixMin'))>0){
+            $articles
+                ->andWhere('av.prix >= :prixMin')
+                ->setParameter('prixMin', $request->query->get('prixMin'));
+        }
+        if($request->query->get('prixMax')!=null  && is_numeric($request->query->get('prixMax')) && intval($request->query->get('prixMax'))>0){
+            $articles
+                ->andWhere('av.prix <= :prixMax')
+                ->setParameter('prixMax', $request->query->get('prixMax'));
+        }
+
+        $articles=$articles->orderBy('av.prix', $tri)
                 ->setMaxResults($limit)
                 ->setFirstResult($offset)
                 ->getQuery()->getResult();
