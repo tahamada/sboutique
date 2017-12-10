@@ -21,7 +21,11 @@ class CommentaireController extends Controller
      */
     public function listAction(Request $request, Articlevendeur $article=null)
     {
-        if($article){            
+        if($article){
+            foreach($article->getCommentaires() as $key=>$value){
+                if($value->getVisible()!=1)
+                    unset($article->getCommentaires()[$key]);
+            }     
             return $this->render('commentaire/list.html.twig',['commentaires'=>$article->getCommentaires()]);
         }
     }
@@ -31,7 +35,7 @@ class CommentaireController extends Controller
      * @ParamConverter("article", options={"mapping": {"idArticle": "id"}})
      * @ParamConverter("client", options={"mapping": {"idPersonne": "id"}})
      */
-    public function detailAction(Request $request,Articlevendeur $article, Client $client){
+    public function addAction(Request $request,Articlevendeur $article, Client $client){
         $commentaire = new Message();
         $em = $this->getDoctrine()->getManager();
         $commentaire->setDate(new \DateTime('now'));

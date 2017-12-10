@@ -13,7 +13,7 @@
 					<span class="hidden panierIdArticle">{{item.article.id}}</span> 
 				</td>
 				<td>{{item.article.designation}}</td>
-				<td><span class="prix">{{item.article.prix}}</span>€</td>
+				<td><span class="prix">{{item.article.prix|number_format(2, ',', '.')}}</span>€</td>
 				<td>{{item.article.nomVendeur}}<span class="hidden panierIdVendeur">{{item.article.idVendeur}}</span></td>
 				<td>  <input type="number" class="quantite" value="{{item.nb}}" min="1" max="99"/></td>
 				<td class="etatStock"></td>

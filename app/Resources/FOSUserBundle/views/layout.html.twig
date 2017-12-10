@@ -1,6 +1,7 @@
 {% extends "base.html.twig" %}
 {% block body %}
 	<div id="fosBlock" class="col-md-8 col-md-offset-2 well">
+		<h3>{% if titre is defined %}{{titre}}{% endif %}</h3>
 		{% block fos_user_content %}{% endblock %}
 	</div>
 {% endblock %}

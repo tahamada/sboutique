@@ -124,11 +124,10 @@ class PanierController extends Controller
         
         $panier=unserialize($request->cookies->get('panier'));
         unset($panier[$id]);
-
         $cookie = new Cookie('panier', serialize($panier), strtotime('now + 24 hours'));  
         
         $nb=0;
-        if(isset($panier) && count($panier)>0){
+        if(isset($panier) && !empty($panier)){
             foreach($panier as $a){
                 if(!empty($a))
                     $nb+=$a['nb'];
@@ -136,7 +135,7 @@ class PanierController extends Controller
             //$nb=count($panier);
         }
         
-        $content=json_encode(["reponse"=>['nbPanier'=>count($nb)]]);
+        $content=json_encode(["reponse"=>['nbPanier'=>$nb]]);
         $response=new response($content);
         $response->headers->setCookie($cookie);
 

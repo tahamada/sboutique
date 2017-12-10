@@ -227,6 +227,15 @@ easy_admin:
 
     design:
         brand_color: '#9c1b54'
+        menu:
+            - { label: 'Accueil', route: 'homepage' }
+            - Categorie
+            - Article
+            - Article_du_vendeur
+            - User
+            - Client
+            - Vendeur
+            - Commentaire
         assets:
             #favicon: ''
             
